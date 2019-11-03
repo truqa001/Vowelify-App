@@ -1,0 +1,17 @@
+@mixin min-width-600px {
+    @media (min-width: 600px) {
+        @content;
+    }
+}
+
+.wrapper {
+    height: calc(100vh - 56px); //minus header's height
+
+    @include min-width-600px {
+        height: calc(100vh - 64px); //minus header's height
+    }
+
+    position: relative;
+    overflow: auto;
+    display: flex;
+}

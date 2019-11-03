@@ -1,0 +1,79 @@
+@import "../../variables";
+
+
+@mixin max-width-807px {
+    @media (max-width: 807px) {
+        @content;
+    }
+}
+
+nav {
+    display: flex;
+    flex-flow: column;
+    padding: 35px;
+    background-color: #fff;
+    overflow-y: scroll;
+
+    button {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        padding: 0 !important;
+        margin-right: 15px;
+    }
+
+    a {
+        color: #000 !important;
+    }
+
+    a:hover {
+        opacity: .9;
+    }
+
+    a::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50px;
+        width: 0;
+        height: 3px;
+        background-color: orange;
+    }
+
+    a.active::before {
+        width: calc(100% - 50px);
+        transition: .4s;
+    }
+
+
+    @include max-width-807px {
+        flex-flow: row;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 10px 25px;
+
+        .form-group {
+            margin-bottom: 0;
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        a::before {
+            bottom: -10px;
+            left: 50%;
+            transform: translate(calc(-50%), -50%);
+        }
+        a.active::before {
+            width: 90%;
+        }
+
+        button {
+            width: 35px;
+            height: 35px;
+        }
+
+    }
+
+}

@@ -1,0 +1,17 @@
+@mixin max-width-600px {
+    @media (max-width: 600px) {
+        @content;
+    }
+}
+
+.card{
+    padding: 30px;
+    width: 540px;
+    background: #fff;
+    margin: auto;
+
+    @include max-width-600px {
+        width: 100%;
+    }
+
+}

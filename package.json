@@ -1,0 +1,50 @@
+{
+    "private": true,
+    "scripts": {
+        "setup-env": "npm install && npm run dev && php -r && cp '.env.example' '.env' &&  php artisan key:generate && php artisan cache:clear && php artisan config:cache",
+        "setup-db": "php artisan cache:clear && php artisan config:cache && php artisan migrate",
+        "dev": "npm run development",
+        "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+        "watch": "npm run development -- --watch",
+        "watch-poll": "npm run watch -- --watch-poll",
+        "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+        "prod": "npm run production",
+        "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+        "test": "jest",
+        "init-github": "git init && git remote add origin https://github.com/truqa001/Vowelify-App.git && git add . && git commit -m 'init project' && git push -u origin master"
+    },
+    "jest": {
+        "setupFilesAfterEnv": [
+            "jest-enzyme"
+        ],
+        "testEnvironment": "enzyme"
+    },
+    "devDependencies": {
+        "@babel/preset-react": "^7.0.0",
+        "@material-ui/core": "^4.5.2",
+        "@material-ui/icons": "^4.5.1",
+        "axios": "^0.19",
+        "babel-plugin-transform-export-extensions": "^6.22.0",
+        "bootstrap": "^4.1.0",
+        "cross-env": "^5.1",
+        "enzyme": "^3.10.0",
+        "enzyme-adapter-react-16": "^1.15.1",
+        "eslint": "^6.6.0",
+        "eslint-plugin-react": "^7.16.0",
+        "identity-obj-proxy": "^3.0.0",
+        "jest": "^24.9.0",
+        "jquery": "^3.2",
+        "laravel-mix": "^4.0.7",
+        "lodash": "^4.17.13",
+        "popper.js": "^1.12",
+        "prop-types": "^15.7.2",
+        "react": "^16.2.0",
+        "react-dom": "^16.2.0",
+        "react-icons": "^3.8.0",
+        "react-router-dom": "^5.1.2",
+        "react-test-renderer": "^16.11.0",
+        "resolve-url-loader": "^2.3.1",
+        "sass": "^1.15.2",
+        "sass-loader": "^7.1.0"
+    }
+}

@@ -1,0 +1,14 @@
+@import "../../variables";
+
+.app-bar {
+    background-color: $primary-blue !important;
+    .logo {
+        font-family: 'Kaushan Script', cursive !important;
+        user-select: none;
+        -webkit-user-select: none;
+        span {
+            font-size: 40px;
+            color: orange
+        }
+    }
+}

@@ -1,0 +1,29 @@
+@mixin min-width-600px {
+    @media (min-width: 600px) {
+        @content;
+    }
+}
+
+@mixin max-width-787px {
+    @media (max-width: 787px) {
+        @content;
+    }
+}
+
+main {
+    flex-grow: 9;
+    background-color: #f6f5f5;
+    padding: 25px;
+    height: 100vh;
+    overflow: auto;
+
+    height: calc(100vh - 56px); //minus header's height
+  
+    @include min-width-600px {
+        height: calc(100vh - 64px); //minus header's height
+    }
+
+    @include max-width-787px {
+        height: calc(100vh - 64px - 50px); // minus header's height and bottom nav
+    }
+}

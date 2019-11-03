@@ -1,0 +1,43 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+
+html, body {
+    background-color: #f6f5f5;
+    overflow: hidden;
+}
+
+span {
+    display: inline-block;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+input[type=submit], .btn {
+    padding-left: 35px;
+    padding-right: 35px;
+    border-radius: 30px;
+}
+
+.btn-orange {
+    background-color: orange;
+    color: #fff;
+}
+
+.btn-orange:hover {
+    background-color: rgb(228, 155, 19);
+    color: #fff;
+}
+
+.is-vowel {
+    color: darkorange;
+    text-decoration: underline;
+}
